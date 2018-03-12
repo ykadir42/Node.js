@@ -25,3 +25,8 @@ fs.unlink('hello.txt', function (err) {
   console.log('File deleted!');
 });
 
+var fs = require('fs');
+var rs = fs.createReadStream('./hello.txt');
+rs.on('open', function () {
+  console.log('The file is open');
+});
